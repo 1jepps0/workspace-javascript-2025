@@ -391,7 +391,7 @@
         <div class="practice">
             <h1>Change Attribute -- Rolling a dice </h1>
             <p> <input type="button" id="roll" value="roll" /> </p>
-            <p> <img src="img/die1.png"> </p>
+            <p > <img id="die" src="img/die1.png"> </p>
             <table>
                 <tr>
                     <th>Result</th>
@@ -412,6 +412,43 @@
                     <td id="r6"></td>
                 </tr>
             </table>
+            <script>
+                // Do Array practice
+                const myarray = [1,2,3,4,5];
+
+                myarray.forEach(element => console.log(element))
+
+                for(var i = 0; i > myarray.length; i++){
+                    console.log(myarray[i]);
+                }
+
+                for (var i in myarray){
+                    console.log(myarray[i])
+                }
+
+                myarray.push(12);
+                myarray[9999] = 22;
+                myarray.push(22);
+                console.log(myarray.length);
+
+                // Do the dice game
+                const dice_button = document.getElementById("roll")
+                const dice = document.getElementById("die");
+
+                var stats = [0, 0, 0, 0, 0, 0];
+
+                const roll_dice = () => {
+                    var num = Math.floor(Math.random() * 6 + 1)
+                    dice.setAttribute("src", "img/die" + String(num) + ".png")
+                    var newStat = ++stats[num - 1];
+
+                    elementToUpdate = document.getElementById("r" + num);
+                    elementToUpdate.textContent = newStat;
+                };
+
+                dice_button.addEventListener("click", roll_dice, false);
+
+            </script>
 
         </div>
 
