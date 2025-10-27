@@ -9,10 +9,6 @@ var num3 =3 ; //change it
 // update all the answers -- practice
 document.querySelector('input[value="4"]').nextSibling.nodeValue=num1.toString()+ "-"+num2.toString()+"+"+num3.toString();
 
-
-
-answers = document.getElementsByClassName('answer');
-
 // Elements -- div answer box -- click
 function changeStyle() {
     event.preventDefault();
@@ -23,7 +19,7 @@ function changeStyle() {
         this.className = "answer";
 }
 
-
+answers = document.getElementsByClassName('answer');
 
 for (let i = 0; i < answers.length; i++){
     answers[i].addEventListener('click', changeStyle, false);
