@@ -474,6 +474,19 @@
                 var index = 3;
                 var imagelist = document.querySelectorAll('.img-container-hide');
                 imagelist[index].setAttribute('class', "img-container");
+								// Event Handler
+								function changepic() {
+									// hide the current image
+									imagelist[index].setAttribute('class', "img-container-hide");
+									// show the next image
+									index ++;
+									if (index >= imagelist.length)
+										index = 0;
+									imagelist[index].setAttribute('class', "img-container");
+								}
+
+								// event
+								setInterval(changepic, 5000);
 				
 			</script>
 
