@@ -29,8 +29,19 @@ function reservation() {
 	guestgroup.push(guest);
 	console.log(guestgroup);
 }
+
+// show reservations
+function showbookings() {
+	var text = ""
+	guestgroup.forEach((element, index, array) => {
+		text += "<br> Name: " + element.name + "<br>Check In: " + element.checkin + "<br>Room Type: " + element.roomtype + "<br>Guest Number: " + element.gustnum + "<br>Room: " + element.room + "<br><br>"
+	});
+	document.getElementById("reservation_list").innerHTML = text;
+}
+
 // register event
 document.getElementById('submit').addEventListener('click', reservation);
+document.getElementById('lists').addEventListener('click', showbookings);
 
 
 console.log(guest.name);
